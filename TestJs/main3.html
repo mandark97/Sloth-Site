@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload=function()
+		{
+			window.onkeypress=function(event)
+			{
+				var par=document.createElement("p");
+				par.id="p_"+event.key;
+				var node = document.createTextNode("Paragraful-"+event.key);
+				par.appendChild(node);
+				document.getElementById("section").appendChild(par);
+				par.addEventListener("click", addClickPar);
+			}
+			document.getElementById("stop").onclick=function()
+			{
+				window.onkeypress=function(){}
+			}
+			var del=document.createElement("button");
+			var node=document.createTextNode("Sterge");
+			del.appendChild(node);
+			document.body.appendChild(del);
+			del.onclick=deleteButton;
+
+		}
+		function addClickPar()
+		{
+			var par=this;
+			par.style.border="solid"
+			var id=setTimeout(function()
+			{
+				par.style.backgroundColor="blue";
+			},3000);
+		}
+		function deleteButton()
+		{
+			var par=document.getElementsByTagName("p");
+			for(var i=0;i<par.length;i++)
+				if(par[i].style.backgroundColor!="blue")
+					{
+						par[i].parentNode.removeChild(par[i]);
+						i--;
+					}
+		}
+	</script>
+</head>
+<body>
+	<section id="section">
+		<h1>Paragrafe literare</h1>
+	</section>
+	<button id="stop">Stop</button>
+</body>
+</html>

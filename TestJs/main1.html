@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$("document").ready(function()
+		{
+			var n=0;
+			$("#save").click(function()
+			{
+				n++;
+				var div=$("<div></div>").css("width","50px").css("height","50px").css("background-color",$("#input").val()).css("display","inline-block");
+				$("body").prepend(div);
+			});
+			$("#del").click(function()
+			{
+				var id=setInterval(function()
+					{
+						if($("div").length>0)
+						$("div").get(0).remove();
+					else
+						clearInterval(id);
+					},300);
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		/*window.onload=function()
+		{
+			var save=document.getElementById("save");
+			var input=document.getElementsByName("input");
+			var n=0;
+			save.onclick=function(){
+				var div=document.createElement("div");
+				document.body.appendChild(div); 
+				div.style.backgroundColor=input[0].value;
+				div.style.width="50px";
+				div.style.height="50px";
+				div.style.display="inline-block";
+				n++;
+			};
+			var del=document.getElementById("del");
+			del.onclick=function()
+			{
+				var id=setInterval(f,3000);
+				function f()
+				{
+					var elem=document.getElementsByTagName("div");
+					if(elem.length>0)
+						elem[0].parentNode.removeChild(elem[0]);
+					else
+						clearInterval(id);
+				}
+			}
+			var tm=setTimeout(function(){alert(n);},3000);
+		}*/
+	</script>
+</head>
+<body>
+	<input type="text" name="input" id="input">
+	<button id="save">Salveaza</button>
+	<button id="del">Sterge</button>
+</body>
+</html>

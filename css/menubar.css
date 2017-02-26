@@ -1,0 +1,81 @@
+ul.menu-bar 
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	line-height: auto;
+	font-family: times, serif;
+	font-size: 35px;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #fffabf;
+	color: black;
+	cursor: pointer;
+}
+
+ul.menu-bar li 
+{
+	float: left;
+	text-align: center;
+	width:25%;
+}
+ul.menu-bar li a
+{
+	text-decoration: none; 
+	color: black;
+}
+ul.menu-bar li:hover >a, ul.menu-bar li:hover
+{
+	color: #220000;
+	background-color: #eeeabe;
+}
+ul.menu-bar li:hover >ul
+{
+	display: block;
+}
+
+
+ul.menu-bar ul 
+{
+	width: 25%;
+	margin: 0;
+	padding: 0;
+	display: none;
+	position: absolute;
+	border: 1px #666666 solid;
+	background-color: #fffabf;
+}
+
+ul.menu-bar ul li
+{
+	width: 100%;
+	float: none;
+	background-color: transparent;
+	border: none;
+	color: black;
+	font-family: georgia, serif;
+	font-size: 25px;
+	font-style: italic;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+ul.menu-bar ul li:hover 
+{
+	color: #220000;
+	background-color: #eeeabe;
+}
+@media screen and (max-width: 600px)
+{
+    ul.menu-bar li 
+    {
+    	float: none;
+    	width: 100%;
+    }
+    ul.menu-bar ul
+    {
+    	width: 100%;
+    }
+}

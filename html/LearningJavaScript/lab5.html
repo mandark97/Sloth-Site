@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning JavaScrip</title>
+	<script type="text/javascript">
+		var cont=true;
+		var word;
+		var dictionar={"acesta":"this", "este":"is", "un":"a"};
+		console.log(dictionar);
+		while(cont)
+		{
+			var ok=true;
+			word=window.prompt("Introdu un cuvant");
+			for(var x in dictionar)
+				{
+					console.log(x);
+					if(x==word)
+				{
+					alert(dictionar[x]);
+					ok=false;
+					break;
+					
+				}
+			}
+				if(ok)
+					alert("not found");
+				if(!window.confirm("continuati?"))
+					cont=false;
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+	</html>

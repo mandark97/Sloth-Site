@@ -1,0 +1,63 @@
+body
+{
+	margin-left: 15%;
+	width: 71%;
+	align-items: center;
+	background: transparent url("../images/rainforestback.jpg"); 
+	background-repeat:repeat-y;
+
+}
+#content
+{
+	background-color: white;
+	position: relative;
+	height: 100%;
+}
+article
+{
+	text-indent: 1%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+article h1
+{
+	font-size: 50px;
+	text-align: center;
+}
+@keyframes orbit
+{
+	from { 	transform: rotate(0deg); }
+	to   { 	transform: rotate(360deg); }
+}
+article img
+{
+	animation-name: orbit;
+	animation-iteration-count: infinite;
+	animation-duration: 0s;
+	float:right;
+	width: 30%;
+	height: 30%;
+}
+article img:hover
+{
+	animation-duration: 10s;
+}
+iframe
+{
+	margin-left: 5%;
+}
+header
+{
+	height: 177px;
+	background-color: red;
+	background: url("../images/SlothRainbow.jpg");
+	background-repeat: repeat-x;
+	font-size: 70px;
+
+	text-align: center;
+}
+header a
+{
+	text-decoration: none;
+	color: black;
+}

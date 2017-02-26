@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("document").ready(function()
+		{
+			
+			var n=0;
+			$("#start").click(function()
+			{
+				var id=setTimeout(f,1000);
+				$("#input").keypress(function(event)
+				{
+					var div=$("<div></div>").css({"height":"50px","width":"50px","display":"inline-block"})
+					.text(event.key);
+					$("body").append(div);
+					n++;
+				});
+			});
+			function f()
+			{	$("#input").off("keypress");
+				alert(n);
+				$("#input").val("");
+				$("#col").click(function()
+				{
+					var i=0;
+					var int=setInterval(function()
+					{
+						if(i<$("div").length)
+							{
+								var d=$("div").get(i);
+								d.style.backgroundColor=$("#input").val();
+								i++;
+							}
+						else
+							clearInterval(int);
+					},3000)
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+	<input type="text" name="input" id="input">
+	<button id="start">Start</button>
+	<button id="col">Coloreaza</button>
+</body>
+</html>

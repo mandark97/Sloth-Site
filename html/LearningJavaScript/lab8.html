@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		window.onload=function()
+		{
+			//window.localStorage.clear();
+			img=document.getElementById("img");
+			img.style.position = 'absolute';
+			img.style.left=window.localStorage.left+'px';
+			img.style.top=window.localStorage.top+'px';
+			/*localStorage.setItem("left",100);
+			localStorage.setItem("top",100);*/
+
+			img.onclick=function()
+			{
+				window.onkeydown=function(event)
+				{
+					console.log(event.keyCode);
+					console.log(window.localStorage);
+					if(event.keyCode==68)
+						{
+							window.localStorage.left=Number(window.localStorage.left)+100;
+							img.style.left=window.localStorage.left+'px';
+						}
+					if(event.keyCode==87)
+					{
+						window.localStorage.top=Number(window.localStorage.top)-100;
+						img.style.top=window.localStorage.top+'px';
+					}
+					if(event.keyCode==83)
+						{
+						window.localStorage.top=Number(window.localStorage.top)+100;
+						img.style.top=window.localStorage.top+'px';
+					}
+					if(event.keyCode==65)
+						{
+							window.localStorage.left=Number(window.localStorage.left)-100;
+							img.style.left=window.localStorage.left+'px';
+						}
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<img id="img" src="player.jpg">
+</body>
+</html>

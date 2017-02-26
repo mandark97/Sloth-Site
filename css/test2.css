@@ -1,0 +1,44 @@
+body
+{
+	margin-left: 15%;
+	width: 70%;
+	height: auto;
+	align-items: center;
+	background: transparent url("../images/rainforestback.jpg"); 
+	background-repeat:repeat-y;
+
+
+}
+#imagini img
+{
+	margin-top: 5%;
+	width: 30%;
+	height: 30%;
+	margin-right: 1.5%;
+	margin-left: 1.5%;
+}
+@keyframes test
+{
+	0%{left: 200px;}
+	100%{left: 500px;}
+}
+#imagini img:hover,#imagini img:hover
+{
+	transform: scale(1.5);
+
+}
+
+header
+{
+	height: 177px;
+	background-color: red;
+	background: url("../images/SlothRainbow.jpg");
+	background-repeat: repeat-x;
+	font-size: 70px;
+	text-align: center;
+}
+header a
+{
+	text-decoration: none;
+	color: black;
+}

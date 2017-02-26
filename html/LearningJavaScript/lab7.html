@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		$(function()
+		{
+			$("#button1").click(function(){
+				var ul = document.createElement("ul");
+				$("body").append(ul);
+				headers=document.getElementsByTagName("h1");
+				console.log(headers);
+				for(var i=0;i< headers.length;i++)
+				{
+
+					var li=document.createElement("li");
+					li.innerHTML=headers[i].innerHTML;
+					$("ul").append(li);
+				}});
+			$("span").removeClass("highlight").addClass("highlight");
+			var div=$("<div id='myalert'></div>");
+			$("body").append(div);
+			$("#myalert").css("position","fixed");
+			var ok=$("<button id='ok'></button>").text("ok");
+			$("#myalert").append(ok);
+			$("#myalert").hide();
+			function myalert(text)
+			{
+				$('#myalert').show();
+				//console.log(div);
+				//console.log(ok);
+				$("#myalert").prepend(text);
+			}
+			$("#ok").click(function()
+			{
+				$("#myalert").hide();
+
+			});
+			myalert("ceva");
+
+
+		});
+	</script>
+</head>
+<body>
+	<h1>1</h1>
+	<h1>2</h1>
+	<button id="button1"></button>
+	<span>dsa</span>
+	<span>dsadasdsadsa</span>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="lab6-1s.js"></script>
+	<script>
+		$(document).ready(function()
+		{
+			function Person(first,last,cnp,data)
+			{
+				this.firstName=first;
+				this.lastName=last;
+				this.CNP=cnp;
+				this.date=data;
+			}
+			var persoane=[];
+			$("#adauga").click(function()
+			{
+				var first=window.prompt("Prenume");
+				var last=prompt("Nume");
+				var cnp=prompt("CNP");
+				while(cnp.match(/[0-9]/)==null)
+					cnp=prompt("CNP");
+				var date=prompt("Date");
+				persoane.push(new Person(first,last,cnp,new Date(date)));
+				console.log(persoane);
+			});
+			Person.prototype.toString = function MagietoString()
+			{
+				var string= this.firstName+" "+this.lastName+" "+this.CNP+" "+this.date;
+				return string;
+			}
+			$("#afiseaza").click(function()
+			{
+				var string="";
+				alert("dsa");
+				console.log(persoane);
+				for(var i=0;i<persoane.length;i++)
+					string=string+"\n"+persoane[i];
+				$("#date").html(string);
+			});
+		})
+	</script>
+</head>
+<body>
+	<p id="p1">primul paragraf</p>
+	<p id="p2">la la al al ala la la al alala</p>
+	<button id="button">Magie</button>
+	<button id="adauga">Adauga</button>
+	<button id="afiseaza">Afiseaza</button>
+	<p id="date"></p>
+</body>
+</html>
